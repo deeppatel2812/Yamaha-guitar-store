@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!-- Main page for the Yamaha Guitar Store portfolio project. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the Yamaha Guitar Store demo — browse guitars, compare prices and build your cart.">
+  <title>Yamaha Guitar Store | Find Your Sound</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement">FIND YOUR SOUND — Explore the guitar collection <span>•</span> Demo storefront</div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Yamaha Guitar Store home"><span class="brand-mark">Y</span><span>YAMAHA<span class="brand-sub">GUITAR STORE</span></span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a class="active" href="#home">Home</a><a href="#shop">Shop guitars</a><a href="#categories">Categories</a><a href="#about">Our story</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button" id="searchFocus" aria-label="Focus search">⌕</button>
+      <button class="cart-button" id="openCart" aria-label="Open shopping cart">Bag <span id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <!-- Main website content starts here. -->
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow light">MADE FOR THE MUSIC IN YOU</p>
+        <h1>Find the sound<br>that feels like <em>you.</em></h1>
+        <p class="hero-copy">From your first chord to your next big stage, find a guitar that makes every note count.</p>
+        <a class="button button-light" href="#shop">Explore collection <span>↗</span></a>
+        <div class="hero-note"><span class="note-line"></span> PLAY YOUR WAY. EVERY DAY.</div>
+      </div>
+      <div class="hero-index">01 <span>/</span> 04</div>
+    </section>
+
+    <section class="trust-strip">
+      <div><strong>28+</strong><span>Guitars to explore</span></div><div><strong>4</strong><span>Curated categories</span></div><div><strong>100%</strong><span>Music inspiration</span></div>
+    </section>
+
+    <section class="section categories-section" id="categories">
+      <div class="section-heading"><div><p class="eyebrow">PICK YOUR PLAYSTYLE</p><h2>Explore by category</h2></div><p>Every style has a sound. Find the one that speaks to you.</p></div>
+      <div class="category-grid">
+        <button class="category-card acoustic" data-category="Acoustic"><span>01 / CLASSIC SOUND</span><b>Acoustic<br>guitars</b><i>Explore ↗</i></button>
+        <button class="category-card electric" data-category="Electric"><span>02 / TURN IT UP</span><b>Electric<br>guitars</b><i>Explore ↗</i></button>
+        <button class="category-card classical" data-category="Classical & Nylon"><span>03 / WARM TONES</span><b>Classical &<br>nylon</b><i>Explore ↗</i></button>
+        <button class="category-card bass" data-category="Bass"><span>04 / FEEL THE GROOVE</span><b>Electric<br>basses</b><i>Explore ↗</i></button>
+      </div>
+    </section>
+
+    <section class="section shop-section" id="shop">
+      <div class="section-heading shop-heading"><div><p class="eyebrow">THE COLLECTION</p><h2>Find your next guitar</h2></div><p>Thoughtfully picked instruments for every kind of player.</p></div>
+      <div class="shop-tools">
+        <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search guitars..." aria-label="Search guitars"></label>
+        <div class="filters" id="filters">
+          <button class="filter active" data-filter="All">All guitars</button><button class="filter" data-filter="Acoustic">Acoustic</button><button class="filter" data-filter="Electric">Electric</button><button class="filter" data-filter="Classical & Nylon">Classical & Nylon</button><button class="filter" data-filter="Bass">Bass</button>
+        </div>
+        <select id="sortSelect" aria-label="Sort products"><option value="featured">Sort: Featured</option><option value="low">Price: Low to high</option><option value="high">Price: High to low</option><option value="az">Name: A to Z</option></select>
+      </div>
+      <div class="result-line"><span id="resultCount">28 guitars</span><button id="clearFilters" class="text-button">Clear filters ×</button></div>
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      <div class="empty-state" id="emptyState" hidden><div>♪</div><h3>No guitars found</h3><p>Try another search or clear your filters.</p><button class="button button-dark" id="resetSearch">Show all guitars</button></div>
+    </section>
+
+    <section class="feature-banner">
+      <div><p class="eyebrow light">YOUR MUSIC. YOUR MOMENT.</p><h2>Great music starts<br>with one <em>good note.</em></h2><a href="#shop" class="button button-outline">Find your instrument ↗</a></div>
+      <p class="banner-side">MAKE<br>EVERY<br>NOTE<br>MATTER.</p>
+    </section>
+
+    <section class="section about-section" id="about"><div class="about-mark">Y</div><div><p class="eyebrow">A NOTE ABOUT US</p><h2>Made for people<br>who love to play.</h2><p>This student-built guitar storefront brings together a curated range of Yamaha-inspired guitar categories in one place. Browse the collection, search by model, save favourites and try the shopping cart experience.</p><a href="#shop" class="underlined-link">Browse the collection ↗</a></div></section>
+  </main>
+
+  <footer class="footer"><a class="brand footer-brand" href="#home"><span class="brand-mark">Y</span><span>YAMAHA<span class="brand-sub">GUITAR STORE</span></span></a><p>Find your sound. Play your way.</p><div class="footer-bottom"><span>© <span id="year"></span> Guitar Store Demo</span><span>Designed with music in mind · Student portfolio project</span></div></footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true">
+    <div class="drawer-head"><div><p class="eyebrow">YOUR SELECTION</p><h2>Your bag <span id="drawerCount">(0)</span></h2></div><button class="close-button" id="closeCart" aria-label="Close cart">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty"><span>♬</span><h3>Your bag is waiting</h3><p>Add a guitar and let the music begin.</p><button class="button button-dark" id="continueShopping">Explore guitars</button></div>
+    <div class="cart-footer" id="cartFooter"><div class="subtotal"><span>Subtotal</span><strong id="subtotal">₹0</strong></div><p>Demo checkout — no payment will be taken.</p><button class="button button-dark checkout-button" id="checkoutButton">Continue to checkout <span>↗</span></button></div>
+  </aside>
+  <div class="toast" id="toast" role="status"></div>
+  <!-- Load the product list before the JavaScript that displays it. -->
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
